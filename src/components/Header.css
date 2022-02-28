@@ -1,0 +1,81 @@
+.header {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #004177;
+  padding: 0 10%;
+}
+
+.overview-title {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.randomButton {
+  font: inherit;
+  cursor: pointer;
+  background-color: #77000a;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid #004177;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.language {
+  display: flex;
+  align-items: center;
+  margin-left: 25rem;
+  color: white;
+}
+
+.language select {
+  margin-left: 1rem;
+  width: 8rem;
+}
+
+.logo {
+  margin-left: 0.5rem;
+  font-size: 2rem;
+  color: white;
+  font-weight: bold;
+  min-width: 300px;
+}
+
+.header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: baseline;
+}
+
+.header li {
+  margin-left: 3rem;
+}
+
+.header a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #fcb8d2;
+}
+
+.header a:hover,
+.header a:active,
+.header a.active {
+  color: white;
+}
+
+.badge {
+  background-color: #cc2062;
+  color: white;
+  border-radius: 12px;
+  padding: 0 1rem;
+  margin-left: 0.5rem;
+}
+
+img {
+  width: 60px;
+} 
