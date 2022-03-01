@@ -5,6 +5,8 @@ import Form1 from './components/Form1';
 import Form2 from './components/Form2';
 import Overview from './components/Overview';
 import Cocktails from './components/Cocktails';
+import FastCocktails from './components/FastCocktails';
+import Footer from './components/Footer';
 
 import './App.css';
 
@@ -23,8 +25,10 @@ function App() {
           <Route path='/form2' element={<Form2 form2Data={form2Data} setForm2Data={setForm2Data} language={language} />} />
           <Route path='/overview' element={<Overview form1Data={form1Data} form2Data={form2Data} language={language} />} />
           <Route path='/cocktails' element={<Cocktails form1Data={form1Data} form2Data={form2Data} language={language} state={state} />} />
+          <Route path='/fastcocktails' element={<FastCocktails language={language} state={state} />} />
         </Routes>
       </BrowserRouter>
+      <Footer />
     </div>
   );
 }

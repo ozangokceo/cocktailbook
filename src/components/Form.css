@@ -12,6 +12,7 @@ input[type="checkbox"] {
   flex-direction: row;
   justify-content: flex-start;
   vertical-align: middle;
+  min-width: 5rem;
 }
 
 .overview,
@@ -43,6 +44,13 @@ input[type="checkbox"] {
 .overview p {
   margin-top: 0;
   margin-bottom: 0.5rem;
+}
+
+.overview p#ingredients {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 .select {
@@ -148,11 +156,11 @@ select {
 
 
 .main {
-  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../assets/cocktail-bar.jpg');
+  background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url('../assets/cocktail-bar.jpg');
   background-size: contain;
   background-repeat: repeat-y;
   height: 150vh;
-  width: 100vw;
+  width: 100%;
 }
 
 .main-paragraph,

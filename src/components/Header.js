@@ -1,34 +1,52 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import logo from '../assets/1222613.png';
+import { useNavigate, useLocation } from 'react-router-dom';
+import trlogo from '../assets/turkey.png';
+import usalogo from '../assets/united-states.png';
+import uklogo from '../assets/ukraine.png';
 
 import './Header.css';
 
 function Header({ setLanguage, setState }) {
-  function click(input) {
-    setLanguage(input)
-    console.log(`test: ${input}` );
+  const location = window.location.pathname;
+  console.log(location);
+
+  function Navigate(params) {
+    let navigate = useNavigate();
+    navigate(params);
   }
+
+  const cocktailString = 'CocktailBook';
+  const rgbMap = [];
+
+  for (let i = 0; i < cocktailString.length; i++) {
+    const randomColorR = Math.floor(Math.random() * 256);
+    const randomColorG = Math.floor(Math.random() * 256);
+    const randomColorB = Math.floor(Math.random() * 256);
+
+    rgbMap.push({ r: randomColorR, g: randomColorG, b: randomColorB });
+  }
+
+  let cocktail = rgbMap.map((el, index) => <span style={{ color: `rgb(${rgbMap[index].r}, ${rgbMap[index].g}, ${rgbMap[index].b})` }}>{cocktailString[index]}</span>);
 
   return (
     <header className='header'>
-      <img src={logo} alt='face' />
-      <div className='logo'>CocktailBook App!</div>
+      <div className='logo-cocktail'>
+        <div className='c-letter'>C</div>
+      </div>
+      <div className='logo'>{cocktail} App!</div>
       <nav>
         <ul>
           <li>{/* <Link to="/">Form1</Link> */}</li>
         </ul>
       </nav>
-      <button className='randomButton' onClick={() => setState((prevState => !prevState))}>Randomise Colors!</button>
+      <button className='randomButton' onClick={() => setState((prevState) => !prevState)}>
+        Randomise Colors!
+      </button>
       <div className='language'>
         Language:
         <select onChange={(e) => setLanguage(e.target.value)}>
-          <option value='EN'>
-            English
-          </option>
-          <option value='TR'>
-            Türkçe
-          </option>
+          <option value='EN'>English</option>
+          <option value='TR'>Türkçe</option>
         </select>
       </div>
     </header>

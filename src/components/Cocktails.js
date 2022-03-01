@@ -59,7 +59,7 @@ function Cocktails({ form1Data, form2Data, language, state }) {
         {filterDataState.map((el, index) => (
           <div style={{ backgroundColor: `rgb(${rgbMap[index].r}, ${rgbMap[index].g}, ${rgbMap[index].b})`}} className='cocktail-container'>
             <img src={el.strDrinkThumb} key={index} />
-            <p>{el.strDrink}</p>
+            <p style={rgbMap[index].r < 100 || rgbMap[index].g < 100 || rgbMap[index].b < 100 ? {color: 'white'} : {color: 'black'}}>{el.strDrink}</p>
           </div>
         ))}
       </div>

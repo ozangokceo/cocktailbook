@@ -61,7 +61,7 @@ function Form1({ setForm1Data, form1Data, language }) {
           </div>
           <div className='input'>
             <label htmlFor='phone'>{language === 'EN' ? 'Phone Number:' : 'Telefon No:'}</label>
-            <input type='tel' required id='phone' ref={phoneInputRef} />
+            <input type='tel' required pattern='^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$' id='phone' ref={phoneInputRef} />
           </div>
           <div className='input'>
             <label htmlFor='mail'>E-mail:</label>

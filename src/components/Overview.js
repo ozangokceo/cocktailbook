@@ -50,7 +50,7 @@ function Overview({ form1Data, form2Data }) {
           </div>
           <div className='overview'>
             <label htmlFor='ingredients'>Chosen Ingredients:</label>
-            <p id='ingredients'>{ingredients.map((item, index) => Object.values(item) ? <h2 key={index}>{Object.values(item)}</h2> : null)}</p>
+            {ingredients.map((item, index) => Object.values(item) ? <p id='ingredients' key={index}>{Object.values(item)}</p> : null)}
           </div>
           <div className='actions'>
             <button onClick={() => navigate('/cocktails')}>Generate Cocktail!</button>
