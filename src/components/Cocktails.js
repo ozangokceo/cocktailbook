@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 import './Cocktail.css';
+import './Neon.css';
 
-function Cocktails({ form1Data, form2Data, language, state }) {
+function Cocktails({ form1Data, form2Data }) {
   const [filterDataState, setFilterDataState] = useState([]);
 
   const alcoholType = form2Data.drinkType;
@@ -11,11 +12,12 @@ function Cocktails({ form1Data, form2Data, language, state }) {
   const category = form2Data.category;
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     async function getRequest() {
       const alcoholFilterData = await (await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=${alcoholType}`)).data.drinks;
       const glassFilterData = await (await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?g=${glassType}`)).data.drinks;
       const categoryFilterData = await (await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${category}`)).data.drinks;
-      const ingredientsFilterData = await (await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Anis`)).data.drinks;
+      // const ingredientsFilterData = await (await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Anis`)).data.drinks;
 
       const filteredData = [];
 
@@ -26,12 +28,6 @@ function Cocktails({ form1Data, form2Data, language, state }) {
       }
 
       setFilterDataState(filteredData);
-
-      console.log(filteredData);
-      console.log(alcoholFilterData);
-      console.log(glassFilterData);
-      console.log(categoryFilterData);
-
     }
     getRequest();
   }, []);
@@ -54,11 +50,11 @@ function Cocktails({ form1Data, form2Data, language, state }) {
 
   return (
     <div className='main'>
-      <h1 className='main-title'>The Cocktails..</h1>
+      <h1 className='main-title-neon'>{form1Data.barName} Bar<br/>The Cocktails..</h1>
       <div className='card' id='cocktail'>
         {filterDataState.map((el, index) => (
           <div style={{ backgroundColor: `rgb(${rgbMap[index].r}, ${rgbMap[index].g}, ${rgbMap[index].b})`}} className='cocktail-container'>
-            <img src={el.strDrinkThumb} key={index} />
+            <img src={el.strDrinkThumb} alt='drink' key={index} />
             <p style={rgbMap[index].r < 100 || rgbMap[index].g < 100 || rgbMap[index].b < 100 ? {color: 'white'} : {color: 'black'}}>{el.strDrink}</p>
           </div>
         ))}

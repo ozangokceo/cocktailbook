@@ -24,7 +24,6 @@ function Form2({ form2Data, setForm2Data, language }) {
     const drinkTypeInput = drinkTypeInputRef.current.value;
     const glassTypeInput = glassTypeInputRef.current.value;
     const ingredientsInput = ingredients.filter((item, index) => checkedState[index])
-    console.log(ingredientsInput);
 
     const form2Data = {
       category: categoryInput,
@@ -37,9 +36,6 @@ function Form2({ form2Data, setForm2Data, language }) {
     window.localStorage.setItem('drinkType', form2Data.drinkType);
     window.localStorage.setItem('glassType', form2Data.glassType);
     window.localStorage.setItem('ingredients', form2Data.ingredients);
-
-
-    console.log(form2Data);
 
     setForm2Data(form2Data);
     navigate('/overview');
@@ -62,10 +58,6 @@ function Form2({ form2Data, setForm2Data, language }) {
       const ingredientsData = await (await axios.get('https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list')).data.drinks;
       setIngredients(ingredientsData);
 
-      console.log(categoriesData);
-      console.log(alcoholTypesData);
-      console.log(glassTypesData);
-      console.log(ingredientsData);
     }
     getRequest();
   }, []);
@@ -116,7 +108,7 @@ function Form2({ form2Data, setForm2Data, language }) {
             </div>
           </div>
           <div className='actions'>
-            <button>Next Step</button>
+            <button>{language === 'EN' ? 'Next Step' : 'Sonraki Adım'}</button>
           </div>
         </form>
       </div>

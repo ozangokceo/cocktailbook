@@ -12,7 +12,8 @@ input[type="checkbox"] {
   flex-direction: row;
   justify-content: flex-start;
   vertical-align: middle;
-  min-width: 5rem;
+  min-width: 12rem;
+  
 }
 
 .overview,
@@ -109,7 +110,7 @@ select {
   background-color: white;
   border-radius: 6px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  margin: 3rem auto;
+  margin: 2rem auto;
   max-width: 40rem;
 }
 
@@ -153,13 +154,13 @@ select {
   margin-top: 0;
 }
 
-
-
 .main {
+  padding: 1rem;
+  background: black;
   background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url('../assets/cocktail-bar.jpg');
   background-size: contain;
   background-repeat: repeat-y;
-  height: 150vh;
+  height: 180vh;
   width: 100%;
 }
 

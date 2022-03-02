@@ -29,8 +29,6 @@ function Form1({ setForm1Data, form1Data, language }) {
     };
 
     window.localStorage.setItem('form1Data', (form1Data));
-    
-    console.log(form1Data);
 
     setForm1Data(form1Data);
     navigate('/form2');
@@ -38,7 +36,6 @@ function Form1({ setForm1Data, form1Data, language }) {
 
   useEffect(() => {
     setForm1Data(window.localStorage.getItem('form1Data'));
-      console.log(window.localStorage.getItem('form1Data'));
   }, [])
 
   return (

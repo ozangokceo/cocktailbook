@@ -17,6 +17,22 @@
   border-radius: 5px;
 }
 
+.logo-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+}
+
+.logo {
+  margin-left: 0.5rem;
+  font-size: 1.8rem;
+  color: white;
+  font-weight: bold;
+  min-width: 300px;
+}
+
 .c-letter {
   position: absolute;
   right: 0.5rem;
@@ -60,13 +76,7 @@
   width: 12rem;
 }
 
-.logo {
-  margin-left: 0.5rem;
-  font-size: 1.8rem;
-  color: white;
-  font-weight: bold;
-  min-width: 300px;
-}
+
 
 .header ul {
   list-style: none;

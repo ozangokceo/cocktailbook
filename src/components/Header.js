@@ -1,19 +1,8 @@
 import React from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
-import trlogo from '../assets/turkey.png';
-import usalogo from '../assets/united-states.png';
-import uklogo from '../assets/ukraine.png';
 
 import './Header.css';
 
 function Header({ setLanguage, setState }) {
-  const location = window.location.pathname;
-  console.log(location);
-
-  function Navigate(params) {
-    let navigate = useNavigate();
-    navigate(params);
-  }
 
   const cocktailString = 'CocktailBook';
   const rgbMap = [];
@@ -30,10 +19,12 @@ function Header({ setLanguage, setState }) {
 
   return (
     <header className='header'>
-      <div className='logo-cocktail'>
-        <div className='c-letter'>C</div>
+      <div className='logo-container'>
+        <div className='logo-cocktail'>
+          <div className='c-letter'>C</div>
+        </div>
+        <div className='logo'>{cocktail} App!</div>
       </div>
-      <div className='logo'>{cocktail} App!</div>
       <nav>
         <ul>
           <li>{/* <Link to="/">Form1</Link> */}</li>

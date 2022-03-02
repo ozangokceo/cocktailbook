@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import './Form.css';
 
 function Overview({ form1Data, form2Data }) {
+  window.scrollTo(0, 0)
   const navigate = useNavigate();
 
   const { barName, firstName, lastName, phoneNumber, email } = form1Data;
